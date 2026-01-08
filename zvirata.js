@@ -1,4 +1,5 @@
 (async () => {
+    
     console.log(getCookie("test_is_running"));
     const cheat_video = "./nenene.html"
     const year = getParam(`y`);
@@ -14,8 +15,9 @@
         return;
     }
 
-    document.getElementById("title").textContent = "Poznávačka - Odpovědi";
+    document.getElementById("title").textContent = "Poznávání přírodnin - Odpovědi";
     document.getElementById("style").href = "./trenazer.css";
+    document.getElementById("zpet").href = `./year.html?y=${year}`;
 
     const end_file = ".webp";
     async function fetchContent(url) {
@@ -36,7 +38,8 @@
     for (let i = 1; i <= len; i++) {
         // Make sure f is 1-indexed or adjust accordingly
         const [first, second] = f[i];
-        const name_img = first[0].toUpperCase() + first.slice(1) + " " + second[0].toUpperCase() + second.slice(1);
+        console.log(first, second);
+        const name_img = first[0].toUpperCase() + first.slice(1) + " " + second[0].toLowerCase() + second.slice(1);
 
         const p = document.createElement("p");
         p.textContent = `Číslo: ${i}. Je to: ${name_img}!`;

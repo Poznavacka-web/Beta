@@ -26,20 +26,19 @@ async function main() {
     const names = await fetch_content("names.json");
     // Nastavení titulku
     let titleText;
+    console.log(year)
+    console.log(Number(year))
     const num_year = Number(year);
-    if (isNaN(num_year)) {
-        try {
-            titleText = "Rok " + (names?.[year] ?? year); // Fallback, pokud names[year] není
-        } catch (e) {
-            titleText = "Rok " + year;
-            console.error("Neplatný rok:", e.message);
-        }
-    } else {
-        titleText = `Poznávačka - Rok ${num_year}/${num_year + 1}`;
+        console.log("nan")
+    try {
+        titleText = names?.[year] ?? year; // Fallback, pokud names[year] není
+    } catch (e) {
+        titleText = year;
+        console.error("Neplatný rok:", e.message);
     }
 
-    document.getElementById("title").textContent = titleText;
-    document.getElementById("title_h1").textContent = titleText;
+    document.getElementById("title").textContent = "Poznávání přírodnin - " + titleText;
+    document.getElementById("title_h1").textContent ="Poznávání přírodnin - " + titleText;
 
     const trenazerParam = getParam("trenazer");
 

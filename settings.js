@@ -1,4 +1,3 @@
-let f_time = true;
 document.base_url = "https://jenikh.github.io/poz_dat/";
 base_url = "https://jenikh.github.io/poz_dat/";
 notifications_bad = true;
